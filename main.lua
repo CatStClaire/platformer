@@ -1,5 +1,6 @@
 local Renderer = require "tools/renderer"
 local GameLoop = require "tools/gameLoop"
+local tlm      = require "tiles/tlm"
 
 local rect     = require "objects/rect"
 local entity   = require "objects/entity"
@@ -12,20 +13,10 @@ g_Height = love.graphics.getHeight()
 
 g_GameTime = 0
 
-local ent = entity:new(32,32,64,64, "player")
-
-function ent:load()
-	gameLoop:addLoop(self)
-end
-
-function ent:tick(dt)
-	print(self.id)
-end
-
 
 
 function love.load()
-	ent:load()
+	tlm:load()
 end
 
 function love.update(dt)
